@@ -1,1 +1,0 @@
-//foreign key is user

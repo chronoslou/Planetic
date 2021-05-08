@@ -1,1 +1,0 @@
-//foregin key is the Post ID
