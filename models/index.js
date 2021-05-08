@@ -6,7 +6,7 @@ const Post = require('./Post');
 const Comment = require('./Comment');
 
 //Establishing User/Location relationships
-User.hasOne(Location, {
+User.belongsTo(Location, {
   foreignKey: 'location_id'
 });
 

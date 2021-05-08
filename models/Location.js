@@ -19,11 +19,11 @@ Location.init(
       allowNull: false
     },
     longitude: {
-      type: DataTypes.DECIMAL(100, 10),
+      type: DataTypes.DECIMAL(40, 10),
       allowNull: true
     },
     latitude: {
-      type: DataTypes.DECIMAL(100, 20),
+      type: DataTypes.DECIMAL(40, 10),
       allowNull: true
     }
   },
