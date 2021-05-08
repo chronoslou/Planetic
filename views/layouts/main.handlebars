@@ -66,6 +66,9 @@
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  {{#unless loggedIn}}
+  <script src="/js/login.js"></script>
+  {{/unless}}
 </body>
 
 </html>

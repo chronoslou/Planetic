@@ -23,8 +23,6 @@ router.get("/home", withAuth, async (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  console.log("************req.session?", req.session);
-
   if (req.session.loggedIn) {
     res.redirect("/home");
   } else {
