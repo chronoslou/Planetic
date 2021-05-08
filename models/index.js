@@ -1,42 +1,54 @@
 //Create the relationships tying all the models together
 
-const Traveller = require('./Traveller');
+const User = require('./User');
 const Location = require('./Location');
-const Trip = require('./Trip');
+const Post = require('./Post');
+const Comment = require('./Comment');
 
-Traveller.belongsToMany(Location, {
-  // Define the third table needed to store the foreign keys
-  through: {
-    model: Trip,
-    unique: false
-  },
-  // Define an alias for when data is retrieved
-  as: 'planned_trips'
+//Establishing User/Location relationships
+User.belongsTo(Location, {
+  foreignKey: 'location_id'
 });
 
-Location.belongsToMany(Traveller, {
-  // Define the third table needed to store the foreign keys
-  through: {
-    model: Trip,
-    unique: false
-  },
-  // Define an alias for when data is retrieved
-  as: 'location_travellers'
-});
+Location.hasMany(User, {
+  foreignKey: 'location_id'
+})
 
-module.exports = { Traveller, Location, Trip };
 
-//Locations haveMany Users 
-//Users haveOne Location 
+//Establishing User/Post relationships 
+Post.belongsTo(User, {
+  foreignKey: 'user_id'
+})
 
-//Users haveMany Posts
-//Posts belongToOne Users
+User.hasMany(Post, {
+  foreignKey: 'user_id'
+})
 
-//Locations haveMany Posts
-//Posts belongToOne Locations
+//Establishing User/Comment relationship 
+Comment.belongsTo(User, {
+  foreignKey: 'user_id'
+})
 
-//Comments belongToOne Post
-//Posts haveMany Comments
+User.hasMany(Comment, {
+  foreignKey: 'user_id'
+})
 
-//ecommerce backend homework 
-//Items have many tags
+//Establishing Location/Post relationship 
+Location.hasMany(Post, {
+  foreignKey: 'location_id'
+})
+
+Post.belongsTo(Location, {
+  foreignKey: 'location_id'
+})
+
+//Establishing Post/Comment relationship 
+Post.hasMany(Comment, {
+  foreignKey: 'post_id'
+})
+
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id'
+})
+
+module.exports = { User, Location, Post, Comment };
