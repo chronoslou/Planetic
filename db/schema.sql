@@ -1,3 +1,2 @@
--- Create database 
--- DROP DATABASE IF EXISTS crowdfund_db;
--- CREATE DATABASE crowdfund_db;
+DROP DATABASE IF EXISTS planetic_db;
+CREATE DATABASE planetic_db;

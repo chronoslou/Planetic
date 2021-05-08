@@ -1,7 +1,10 @@
 const sequelize = require('../config/connection');
-const {  } = require('../models');//connect to models
+const { User, Location, Post, Comment  } = require('../models');//connect to models
 
 const userData = require('./userData.json');
+const locationData = require('./locationData.json');
+const postData = require('./postData.json');
+const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -11,9 +14,14 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  await Location.bulkCreate(locationData);
+
+  await Post.bulkCreate(postData);
+
+  await Comment.bulkCreate(commentData);
+
   process.exit(0);
 };
 
 seedDatabase();
 
-//configure to seed database on start

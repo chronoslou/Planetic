@@ -36,6 +36,18 @@ User.init(
         len: [8],
       },//Where are you located? What are some ideal destinations, pro tip for your location
     },
+    proTip: {
+      type: DataTypes.STRING(1000),
+    },
+    location_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'location',
+        key: 'id',
+        unique: false
+      }
+    },
+
   },
   {
     hooks: {

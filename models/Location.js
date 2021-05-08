@@ -17,6 +17,14 @@ Location.init(
     location_name: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    longitude: {
+      type: DataTypes.DECIMAL(100, 10),
+      allowNull: true
+    },
+    latitude: {
+      type: DataTypes.DECIMAL(100, 20),
+      allowNull: true
     }
   },
   {

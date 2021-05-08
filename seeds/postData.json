@@ -1,0 +1,17 @@
+[
+    {
+      "content": "Where can I get barbecue in New York?",
+      "user_id": 2,
+      "location_id": 1  
+    },
+    {
+      "content": "Where can I go for Indian food in London?",
+      "user_id": 1,
+      "location_id": 2  
+    },
+    {
+      "content": "Where is the train in LA?",
+      "user_id": 2,
+      "location_id": 3  
+    }
+]
