@@ -1,12 +1,9 @@
-
-
-//locations/:id **updated with handlebars templates, pass in data for location, posts, comms**
-
 const router = require('express').Router();
-const { Location, Traveller, Trip } = require('../../models');
+const { Location, Comment, Post, User } = require('../../models');
+const withAuth = require("../../utils/auth");
 
 // GET all locations
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const locationData = await Location.findAll();
     res.status(200).json(locationData);
@@ -19,8 +16,8 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const locationData = await Location.findByPk(req.params.id, {
-      // JOIN with travellers, using the Trip through table
-      include: [{ model: Traveller, through: Trip, as: 'location_travellers' }]
+      // JOIN with posts
+      include: [{ model: Post }] //TODO: Fix this
     });
 
     if (!locationData) {
@@ -34,34 +31,5 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// CREATE a location
-router.post('/', async (req, res) => {
-  try {
-    const locationData = await Location.create(req.body);
-    res.status(200).json(locationData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-// DELETE a location
-router.delete('/:id', async (req, res) => {
-  try {
-    const locationData = await Location.destroy({
-      where: {
-        id: req.params.id
-      }
-    });
-
-    if (!locationData) {
-      res.status(404).json({ message: 'No location found with this id!' });
-      return;
-    }
-
-    res.status(200).json(locationData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;
