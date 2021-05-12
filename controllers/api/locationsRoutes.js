@@ -17,7 +17,7 @@ router.get('/:id', async (req, res) => {
   try {
     const locationData = await Location.findByPk(req.params.id, {
       // JOIN with posts
-      include: [{ model: Post }] //TODO: Fix this
+      include: [{ model: Post }]  //TODO: Fix this
     });
 
     if (!locationData) {
