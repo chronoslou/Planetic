@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Post, Location, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Prevent non logged in users from viewing the homepage
@@ -23,15 +23,17 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 router.get('/profile', withAuth, async (req, res) => {
+  console.log("123", req.session)
+  console.log("456", req.session.userId)
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.id, {
+    const userData = await User.findByPk(req.session.userId, {
       attributes: { exclude: ['password'] },
-      include: [{ model: User }],
+      include: [{ model: Location }],
     });
 
     const user = userData.get({ plain: true });
-
+    console.log("we got this far", user)
     res.render('profile', {
       ...user,
       logged_in: true
