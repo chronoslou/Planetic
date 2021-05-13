@@ -1,53 +1,105 @@
-{{!-- pass in the data correlating to each location in a "feed" --}}
-
-{{location_name}}
-
 <body>
-    <div class="post-template">
-        <div class="box">
-            <article class="media">
-            <div class="media-content">
-                <div class="content">
-                <p>
-                    <strong>JOE WOOD</strong> <small>@xx_elegy_xx</small> <small>31m</small>
-                    <br>
-                    What's the best spot to get a pizza in the LES?
-                </p>
-                <!--right now the buttons are in the box, can be changed-->
-                <div class="buttons">
-                    <button class="button is-info is-small">FOOD</button>
-                    <button class="button is-success is-small">ASK A LOCAL</button>
-                </div>
-                </div>
-                <!-- LIKE COMMENT RETWEET -->
-                <nav class="level is-mobile">
-                <div class="level-left">
-                    <a class="level-item" aria-label="reply">
-                    <span class="icon is-small">
-                        <i class="fas fa-reply" aria-hidden="true"></i>
-                    </span>
-                    </a>
-                    <a class="level-item" aria-label="comment">
-                    <span class="icon is-small">
-                        <i class="fas fa-comment" aria-hidden="true"></i>
-                    </span>
-                    </a>
-                    <a class="level-item" aria-label="like">
-                    <span class="icon is-small">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                    </span>
-                    </a>
-                </div>
-                </nav>
+    <div class="container">
+        <div class="city-header">
+            <div class="strong">
+                <strong>{{location_name}}</strong>
             </div>
-            </article>
+            <div class="pro-tip">
+                <p>{{proTip}}PRO TIP!!!</p>
+            </div>
         </div>
-        <div class="control">
-            <input class="input" type="text" placeholder="Comment">
-        </div>
-        <div class="control">
-            <button class="button is-primary">Post Comment</button>
-          </div>
     </div>
+        <div class="container">
+            <div class="box">
+            <div class="field">
+                <div class="content">
+                    <div class="ask-a-question">
+                            <div class="field">
+                    <label class="label">CREATE A POST</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="What would you like to say to {{location_name}}?">
+                    </div>
+                    </div>
+                    <div class="field">
+                    <label class="label">Subject</label>
+                    </div>
+                    <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-light">Cancel</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    {{#each post as |post| }}
+        <div class="container">
+             <div class="post-template">
+            <div class="box">
+                <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                    <p>
+                        <strong>{{userData.name}}</strong>
+                        <br>
+                        {{postData.content}}
+                    </p>
+                    <!--right now the buttons are in the box, can be changed-->
+                    </div>
+                    <!-- LIKE COMMENT RETWEET -->
+                    <nav class="level is-mobile">
+                    <div class="level-left">
+                        <a class="level-item" aria-label="reply">
+                        <span class="icon is-small">
+                            <i class="fas fa-reply" aria-hidden="true"></i>
+                        </span>
+                        </a>
+                        <a class="level-item" aria-label="comment">
+                        <span class="icon is-small">
+                            <i class="fas fa-comment" aria-hidden="true"></i>
+                        </span>
+                        </a>
+                        <a class="level-item" aria-label="like">
+                        <span class="icon is-small">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </span>
+                        </a>
+                    </div>
+                    </nav>
+                </div>
+
+                {{!-- COMMENTS HERE --}}
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                    <p>
+                        <strong>{{userData.name}}</strong>
+                        <br>
+                        {{postData.content.comment}}
+                    </p>
+                    </div>
+                </article>
+                </article>
+                <article class="media">
+                    <div class="media-content">
+                        <div class="field">
+                        <p class="control">
+                            <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                        </p>
+                        </div>
+                        <div class="field">
+                        <p class="control">
+                            <button class="button">Post Comment</button>
+                        </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        </div> 
+    {{/each}}
 </body>
-</html>

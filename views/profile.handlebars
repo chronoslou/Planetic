@@ -1,6 +1,25 @@
 <div>
     It works, welcome to your profile page!
-
     Hello  {{name}}!
-
+</div>
+<div class="box">
+  <div class="field">
+        <label class="label">Username: {{userData.name}}</label>
+        <label class="label">Email: {{userData.email}}</label>
+        <label class="label">Home City {{userData.location_id}}</label>
+        </div>
+        <div class="field">
+        <label class="label">Pro Tip</label>
+        <div class="control">
+            <textarea class="textarea" placeholder="{{userData.proTip}}Hey, my name is Joey. I'm from New York and I like Pokemon."></textarea>
+        </div>
+        </div>
+        <div class="field is-grouped">
+        <div class="control">
+            <button class="button is-link">Change Pro Tip</button>
+        </div>
+        <div class="control">
+            <button class="button is-link is-light">Cancel</button>
+        </div>
+    </div>
 </div>
