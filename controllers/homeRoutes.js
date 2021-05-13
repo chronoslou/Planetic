@@ -42,6 +42,25 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+router.get('/locationbrowser', withAuth, async (req, res) => {
+
+  try {
+    const allLocationsData = await Location.findAll();
+    console.log("working on it")
+    res.render("locationbrowser", {
+      ...allLocationsData,
+      logged_in: true
+    })
+    // const user = userData.get({ plain: true });
+    // console.log("we got this far", user)
+    // res.render('profile', {
+    //   ...user,
+    //   logged_in: true
+    // });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get("/login", (req, res) => {
   // If a session exists, redirect the request to the homepage

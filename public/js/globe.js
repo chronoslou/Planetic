@@ -98,6 +98,8 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 };
 
+
+
 //Clicking on a point
 function onWindowClick(event) {
     event.preventDefault();
@@ -108,10 +110,13 @@ function onWindowClick(event) {
 
     let intersects = raycaster.intersectObjects(earth.children);
 
+
    for (let i = 0; i < intersects.length; i++){
          document.querySelector("#city-info").innerText = intersects[0].object.userData.location_name;
          document.querySelector("#location-btn").innerText = "Join the conversation in " + intersects[0].object.userData.location_name;
+         document.querySelector("#location-btn").value = intersects[0].object.userData.id;
     }
+
     const item = intersects[0];
     let point = item.point;
     let camDistance = camera.position.copy(point).normalize.multiplyScalar(camDistance); // zooms into point
@@ -142,7 +147,7 @@ function removeChildren(){
 };
 
 // Add data points
-function addCountryCoord(earth, location_name, latitude, longitude, color){
+function addCountryCoord(earth, location_name, latitude, longitude, id, color){
 
     let pointOfInterest = new THREE.SphereGeometry(.1, 32, 32);
     let lat = latitude * (Math.PI/180);
@@ -168,6 +173,7 @@ function addCountryCoord(earth, location_name, latitude, longitude, color){
 
     mesh.userData.location_name = location_name;
     mesh.userData.color = color;
+    mesh.userData.id = id;
     earth.add(mesh)
 
 };
@@ -183,7 +189,7 @@ function changeToCountry() {
 
     for (let i = 0; i < data.length; i++){
         
-            addCountryCoord(earth,data[i].location_name, data[i].latitude, data[i].longitude, 'yellow');
+            addCountryCoord(earth,data[i].location_name, data[i].latitude, data[i].longitude, data[i].id, 'yellow');
        
     }
 };

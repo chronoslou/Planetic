@@ -12,6 +12,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+
 // GET a single location
 router.get('/:id', async (req, res) => {
   try {
@@ -20,12 +21,19 @@ router.get('/:id', async (req, res) => {
       include: [{ model: Post }]  //TODO: Fix this
     });
 
+    const location = locationData.get({ plain: true });
+    console.log("we got this far", location)
+    res.render('locationpage', {
+      ...location,
+      logged_in: true
+    });
+
     if (!locationData) {
       res.status(404).json({ message: 'No location found with this id!' });
       return;
     }
 
-    res.status(200).json(locationData);
+    // res.status(200).json(locationData);
   } catch (err) {
     res.status(500).json(err);
   }

@@ -1,47 +1,34 @@
 * {
-    overflow: hidden;
     margin: 0;
-    color: white; 
+ }
+
+ nav {
+     background-color: black;
  }
  
  #location-info {
-     justify-items: center;
-     align-content: center;
+
+     background-color: black;
+     z-index: 100;
+     position: fixed;
+     color: white;
      display: none;
      flex-direction: column;
-     background-color: black;
-     opacity: 75%;
-     position: absolute;
-     right: 0vh;
-     bottom: 0vh;
-     width: 25vw;
-     height: 50vh;
-     font-size: 9pt;
-     font-style: normal;
      text-align: center;
+     bottom: 20vh;;
  }
  
              
  #country-info, #city-info {
-     font-size: 1.5rem;
-     margin-top: 3%;
-     justify-items: center;
-     align-content: center;
-     align-self: center;
-     text-align: left;
-     text-indent: 3%;
-     width: 75%;
-     height: 7%;
-     border-radius: 10%;
-     margin-bottom: 1%;
-     text-align: center;
+    color: white;
+    font-size: 1.5rem;
  }
  
  #location-btn {
-     color: yellow;
-     background-color: black;
-     opacity: 75%;
+     color: blue;
+     background-color: white;
      text-align: center;
+     padding: 1rem;
  }
      
 
