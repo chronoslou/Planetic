@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MainPage</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"> 
   <script>FontAwesomeConfig = { autoA11y: true }</script>
   <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 </head>
@@ -18,17 +18,20 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         {{#if logged_in}} 
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io"><img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"></a>
+            <a class="navbar-item" href="/"><img src="/IMAGES/Planetic.png" width="112" height="28"></a>
         </div>
               <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
-                  <a class="navbar-item">Home</a>
+                  <a class="navbar-item" href="/">Home</a>
+                </div>
+                <div class="navbar-start">
+                    <a class="navbar-item" id="browselocals">Browse Locations</a>
                 </div>
               <div class="navbar-end">
               <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">My Profile</a>
               <div class="navbar-dropdown">
-                <a class="navbar-item">Edit My Profile</a>
+                <a class="navbar-item" id="profile">Edit My Profile</a>
                 <a class="navbar-item" id="logout">Logout</a>
                 </div>
                 </div>
@@ -37,11 +40,11 @@
               {{else}}
                <!--Not logged in-->
             <div class="navbar-brand">
-              <a class="navbar-item" href="https://bulma.io"><img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"></a>
+              <a class="navbar-item" href="/"><img src="/IMAGES/Planetic.png" width="112" height="28"></a>
             </div>
                 <div id="navbarBasicExample" class="navbar-menu">
                   <div class="navbar-start">
-                    <a class="navbar-item">Home</a>
+                    <a class="navbar-item" href="/">Home</a>
                   </div>
                   <div class="navbar-end">
                   <div class="navbar-item">

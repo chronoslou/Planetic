@@ -1,7 +1,9 @@
 * {
-    overflow: hidden;
     margin: 0;
-    color: white; 
+ }
+
+ nav {
+     background-color: black;
  }
  
  #location-info {
@@ -19,6 +21,8 @@
      font-size: 9pt;
      font-style: normal;
      text-align: center;
+     color: white; 
+     z-index: 20;
  }
  
              
