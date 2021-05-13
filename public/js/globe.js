@@ -99,6 +99,7 @@ function onWindowResize() {
 };
 
 
+
 //Clicking on a point
 function onWindowClick(event) {
     event.preventDefault();
@@ -109,10 +110,13 @@ function onWindowClick(event) {
 
     let intersects = raycaster.intersectObjects(earth.children);
 
+
    for (let i = 0; i < intersects.length; i++){
          document.querySelector("#city-info").innerText = intersects[0].object.userData.location_name;
          document.querySelector("#location-btn").innerText = "Join the conversation in " + intersects[0].object.userData.location_name;
+         document.querySelector("#location-btn").value = intersects[0].object.userData.id;
     }
+
     const item = intersects[0];
     let point = item.point;
     let camDistance = camera.position.copy(point).normalize.multiplyScalar(camDistance); // zooms into point

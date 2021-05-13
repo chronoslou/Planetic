@@ -14,11 +14,15 @@ const logout = async () => {
 const locationBrowser = async () => {
   document.location.replace("/locationbrowser")
 }
+
 const profile = async () => {
   document.location.replace("/profile")
 }
 
 
+
+
 document.querySelector("#logout").addEventListener("click", logout);
 document.querySelector("#browselocals").addEventListener("click", locationBrowser);
 document.querySelector("#profile").addEventListener("click", profile);
+
