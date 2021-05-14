@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
       // JOIN with posts
       include: [
         { 
-          model: Post 
+          model: Post
         }
       ]  //TODO: Fix this
       
