@@ -17,16 +17,33 @@
                             <div class="field">
                     <label class="label">CREATE A POST</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="What would you like to say to {{location_name}}?">
+                        <input class="input" id="post-content" type="text" placeholder="What would you like to say to {{location_name}}?">
                     </div>
                     </div>
                     
                     <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-link">Submit</button>
+                        <button class="button is-link" id="newPostBtn" onclick="buttonclick()">Submit</button>
+                        <script>
+                            async function buttonclick() {
+                            if (postContent) {
+                                const response = await fetch("/api/posts", {
+                                method: "POST",
+                                    body: JSON.stringify({ postContent }),
+                                    headers: { "Content-Type": "application/json" },
+                                });
+                            
+                                if (response.ok) {
+                                    location.reload();
+                                } else {
+                                    alert(response.statusText);
+                                }
+                            }
+                        }
+                        </script>
                     </div>
                     <div class="control">
-                        <button class="button is-link is-light">Cancel</button>
+                        <button class="button is-link is-light" >Cancel</button>
                     </div>
                     </div>
                 </div>
@@ -49,9 +66,9 @@
                         {{posts.content}}
                     </p>
                     <!--right now the buttons are in the box, can be changed-->
-                    <div class="buttons">
+                    {{!-- <div class="buttons">
                         <button class="button is-success is-small">ASK A LOCAL</button>
-                    </div>
+                    </div> --}}
                     </div>
                     <!-- LIKE COMMENT RETWEET -->
                     <nav class="level is-mobile">
@@ -75,7 +92,7 @@
                     </nav>
                 </div>
                 </article>
-                <article class="media">
+                {{!-- <article class="media">
                     <div class="media-content">
                         <div class="field">
                         <p class="control">
@@ -88,7 +105,7 @@
                         </p>
                         </div>
                     </div>
-                </article>
+                </article> --}}
             </div>
         </div>
         </div> 

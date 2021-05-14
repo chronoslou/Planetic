@@ -1,18 +1,48 @@
 [
     {
-        "location_name": "New York",
+        "location_name": "New York, USA",
         "latitude": 40.763491,
         "longitude": -73.979992     
         
     },
     {
-        "location_name": "London",
+        "location_name": "London, UK",
         "latitude": 51.5074,
         "longitude": 0.1278
     },
     {
-        "location_name": "Los Angeles",
+        "location_name": "Los Angeles, USA",
         "latitude": 34.063258,
         "longitude": -118.255406
+    },
+    {
+        "location_name": "São Paulo, BR",
+        "latitude": -23.548294,
+        "longitude": -46.631913
+    },
+    {
+        "location_name": "Singapore",
+        "latitude": 1.291133,
+        "longitude": 103.855979
+    },
+    {
+        "location_name": "Cape Town, SA",
+        "latitude": -33.929672,
+        "longitude": 18.422991
+    },
+    {
+        "location_name": "Paris, FR",
+        "latitude": 48.857417,
+        "longitude": 2.333418
+    },
+    {
+        "location_name": "Abu Dhabi, UAE",
+        "latitude": 24.414483,
+        "longitude": 54.592968
+    },
+    {
+        "location_name": "Lima, PE",
+        "latitude": -12.043402,
+        "longitude": -77.091217
     }
 ]

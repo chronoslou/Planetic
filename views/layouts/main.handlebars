@@ -20,12 +20,7 @@
             <a class="navbar-item" href="/"><img src="/IMAGES/Planetic.png" width="112" height="28"></a>
         </div>
               <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                  <a class="navbar-item" href="/">Home</a>
-                </div>
-                <div class="navbar-start">
-                    <a class="navbar-item" id="browselocals">Browse Locations</a>
-                </div>
+                
               <div class="navbar-end">
               <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">My Profile</a>
@@ -68,9 +63,11 @@
   <!-- Only include the logout script if the user is logged in -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+
   {{else}}
   <script src="/js/login.js"></script>
   {{/if}}
+
  
 </body>
 
