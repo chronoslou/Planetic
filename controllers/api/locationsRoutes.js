@@ -18,15 +18,23 @@ router.get('/:id', async (req, res) => {
   try {
     const locationData = await Location.findByPk(req.params.id, {
       // JOIN with posts
-      include: [{ model: Post }]  //TODO: Fix this
+      include: [
+        { 
+          model: Post 
+        }
+      ]  //TODO: Fix this
+      
     });
 
     const location = locationData.get({ plain: true });
     console.log("we got this far", location)
+
     res.render('locationpage', {
       ...location,
       logged_in: true
     });
+
+    console.log(locationData)
 
     if (!locationData) {
       res.status(404).json({ message: 'No location found with this id!' });
