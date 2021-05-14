@@ -1,9 +1,16 @@
 * {
     margin: 0;
+    background-color: black;
  }
 
- nav {
+ html {
      background-color: black;
+ }
+
+ .navbar {
+     background-color: black;
+     position: fixed;
+     z-index: 100;
  }
  
  #location-info {
@@ -12,7 +19,7 @@
      z-index: 100;
      position: fixed;
      color: white;
-     display: none;
+     display: flex;
      flex-direction: column;
      text-align: center;
      bottom: 20vh;;
@@ -29,6 +36,10 @@
      background-color: white;
      text-align: center;
      padding: 1rem;
+ }
+
+ .hidden {
+     display: none;
  }
      
 

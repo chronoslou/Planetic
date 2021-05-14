@@ -112,9 +112,15 @@ function onWindowClick(event) {
 
 
    for (let i = 0; i < intersects.length; i++){
-         document.querySelector("#city-info").innerText = intersects[0].object.userData.location_name;
-         document.querySelector("#location-btn").innerText = "Join the conversation in " + intersects[0].object.userData.location_name;
-         document.querySelector("#location-btn").value = intersects[0].object.userData.id;
+        let cityInfo = document.querySelector("#city-info");
+         cityInfo.innerText = intersects[0].object.userData.location_name;
+         cityInfo.classList.remove("hidden");
+         let locationVal = document.querySelector("#location-btn");
+         locationVal.classList.remove("hidden")
+         locationVal.innerText = "Join the conversation in " + intersects[0].object.userData.location_name;
+         let attr = document.createAttribute("class");
+         attr.value = intersects[0].object.userData.id;
+         locationVal.setAttributeNode(attr); 
     }
 
     const item = intersects[0];
