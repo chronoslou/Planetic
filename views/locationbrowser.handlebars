@@ -1,18 +1,27 @@
-<div>
-    Testing!!
-</div>
-<div>
-    Testing!!
-</div>
-<div>
-    Testing!!
-</div>
-<div>
-    Testing!!
-</div>
-<div>
-    Testing!!
-</div>
-<div>
-    Testing!!
-</div>
+<body>
+   <h1>All Locations</h1>
+
+    {{#if locations.length}}
+    {{#each locations as |locations| }}
+        <div class="container">
+             <div class="post-template">
+            <div class="box">
+                <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                    <p>
+                        <strong>{{location.dataValues.location_name}}</strong>
+                    </p>
+                   
+                        <p class="control">
+                            <button class="button">Join the conversation</button>
+                        </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        </div> 
+    {{/each}}
+    {{/if}}
+</body>
