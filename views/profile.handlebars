@@ -1,38 +1,38 @@
-
-
 <div class="box">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="IMAGES/user.png" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4">{{name}}</p>
-        <p class="subtitle is-6">{{email}}</p>
-      </div>
+  <div class="media">
+    <div class="media-left">
+      <figure class="image is-48x48">
+        <img src="IMAGES/user.png" alt="Placeholder image" />
+      </figure>
     </div>
-
-    <div class="content">
-      Home City: {{location.location_name}}
-    </div>
-    <div class="content">
-      Pro Tip: {{proTip}}
+    <div class="media-content">
+      <p class="title is-4">{{name}}</p>
+      <p class="subtitle is-6">{{email}}</p>
     </div>
   </div>
+
+  <div class="content">
+    Home City:
+    {{location.location_name}}
+  </div>
+  <div class="content">
+    Pro Tip:
+    {{proTip}}
+  </div>
+</div>
+<div class="field">
   <div class="field">
-        <div class="field">
-        <label class="label">Edit Pro Tip</label>
-        <div class="control">
-            <textarea class="textarea" placeholder={{proTip}}></textarea>
-        </div>
-        </div>
-        <div class="field is-grouped">
-        <div class="control">
-            <button class="button is-link">Change Pro Tip</button>
-        </div>
-        <div class="control">
-            <button class="button is-link is-light">Cancel</button>
-        </div>
+    <label class="label">Edit Pro Tip</label>
+    <div class="control">
+      <textarea class="textarea" placeholder={{proTip}}></textarea>
     </div>
+  </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link">Change Pro Tip</button>
+    </div>
+    <div class="control">
+      <button class="button is-link is-light">Cancel</button>
+    </div>
+  </div>
 </div>

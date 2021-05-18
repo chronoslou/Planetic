@@ -1,23 +1,30 @@
 [
-    {
-        "name": "Connor Todd",
-        "email": "ct@gmail.com",
-        "password": "password",
-        "proTip": "New york has great taco bell!",
-        "location_id": 1
-    },
-    {
-        "name": "Rachel Strong",
-        "email": "rs@gmail.com",
-        "password": "password2",
-        "proTip": "London is really cold!",
-        "location_id": 2
-    },
-    {
-        "name": "Joe Wood",
-        "email": "jw@gmail.com",
-        "password": "password3",
-        "proTip": "LA is stupid",
-        "location_id": 3
-    }
+  {
+    "name": "Connor Todd",
+    "email": "ct@gmail.com",
+    "password": "password",
+    "proTip": "New york has great taco bell!",
+    "location_id": 1
+  },
+  {
+    "name": "Rachel Strong",
+    "email": "rs@gmail.com",
+    "password": "password2",
+    "proTip": "London is really cold!",
+    "location_id": 2
+  },
+  {
+    "name": "Joe Wood",
+    "email": "jw@gmail.com",
+    "password": "password3",
+    "proTip": "LA is stupid",
+    "location_id": 3
+  },
+  {
+    "name": "Lou Falla",
+    "email": "lf@gmail.com",
+    "password": "password4",
+    "proTip": "SF has great trails",
+    "location_id": 4
+  }
 ]
