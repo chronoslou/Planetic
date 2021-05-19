@@ -1,17 +1,22 @@
 [
-    {
-        "comment": "I love Brother Jimmys!",
-        "user_id": 2,
-        "post_id": 1
-    },
-    {
-        "comment": "Dishoom is the best!",
-        "user_id": 2,
-        "post_id": 2
-    },
-    {
-        "comment": "Don't take the trian in LA",
-        "user_id": 3,
-        "post_id": 3
-    }
+  {
+    "comment": "I love Brother Jimmys!",
+    "user_id": 2,
+    "post_id": 1
+  },
+  {
+    "comment": "Dishoom is the best!",
+    "user_id": 2,
+    "post_id": 2
+  },
+  {
+    "comment": "Don't take the trian in LA",
+    "user_id": 3,
+    "post_id": 3
+  },
+  {
+    "comment": "Love SF",
+    "user_id": 4,
+    "post_id": 4
+  }
 ]

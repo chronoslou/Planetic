@@ -2,36 +2,41 @@
   {
     "content": "Where can I get barbecue in New York?",
     "user_id": 2,
-    "location_id": 1  
+    "location_id": 1
   },
   {
     "content": "Where can I go for Indian food in London?",
     "user_id": 1,
-    "location_id": 2  
+    "location_id": 2
   },
   {
     "content": "Where is the train in LA?",
     "user_id": 2,
-    "location_id": 3  
+    "location_id": 3
   },
   {
     "content": "Where's the best place to grab a slice?",
     "user_id": 2,
-    "location_id": 1  
+    "location_id": 1
   },
   {
     "content": "Any good recs for a place to bring a first-timer to NY???",
     "user_id": 2,
-    "location_id": 1  
+    "location_id": 1
   },
   {
     "content": "I HATE RUSH HOUR",
     "user_id": 2,
-    "location_id": 1  
+    "location_id": 1
   },
   {
     "content": "DONT EAT THE GUM UNDER THE TABLES IN TIMES SQUARE",
     "user_id": 2,
-    "location_id": 1  
+    "location_id": 1
+  },
+  {
+    "content": "Go to Land's End if you want to trail",
+    "user_id": 4,
+    "location_id": 1
   }
 ]
