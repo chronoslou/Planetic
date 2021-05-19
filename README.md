@@ -6,6 +6,8 @@ https://github.com/chronoslou/Planetic
 
 ## Heroku Link:
 
+https://planetic.herokuapp.com/
+
 # Description:
 
 The following files contain the necessary assets to deploy the back-end for the travel social media application, Planetic. Planetic utilizes Node.js and Sequelize within the MVC paradigm to create user profiles, browse the globe for travel destinations, and engage with other users based on location. Planetic uses get and post routes to retrieve and add new data. Planetic also utilizes handlebars for formatting and the Bulma CSS framework. The rotating globe on the app homepage is using Three.js!
